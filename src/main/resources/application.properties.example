@@ -1,17 +1,21 @@
+# Application Configuration
 spring.application.name=market
 server.port=8080
 
+# Database Configuration
 spring.datasource.url=jdbc:mysql://localhost:3306/market?createDatabaseIfNotExist=true
-spring.datasource.username=root
-spring.datasource.password=123456
+spring.datasource.username=your_username
+spring.datasource.password=your_password
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
+# JPA / Hibernate Configuration
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 spring.jpa.open-in-view=false
 
 # JWT Configuration
-jwt.secret=${JWT_SECRET:4qhq8LrEBfYcaRHxhdb9zURb2rf8e7Ud}
-jwt.expiration=${JWT_EXPIRATION:2592000}
+# Secret key should be at least 256 bits long
+jwt.secret=your_jwt_secret_key_here
+# Token expiration time in seconds (default: 30 days)
+jwt.expiration=2592000
